@@ -12,13 +12,13 @@
     <%- include("./partials/navbar")%>
     <h1 class="w3-center"> Node Bootcamp Form</h1> 
     <div class="container">
-        <form method='GET' action="/add-bootcamp">
+        <form method='POST' action="/add-message">
         <div class="row">
           <div class="col-25">
             <label for="fname">First Name</label>
           </div>
           <div class="col-75">
-            <input type="text" id="firstname" name="firstname" placeholder="Your name..">
+            <input type="text" id="firstName" name="firstName" placeholder="Your name..">
           </div>
         </div>
         <div class="row">
@@ -26,7 +26,7 @@
             <label for="lname">Last Name</label>
           </div>
           <div class="col-75">
-            <input type="text" id="lastname" name="lastname" placeholder="Your last name..">
+            <input type="text" id="lastName" name="lastName" placeholder="Your last name..">
           </div>
         </div>
         <div class="row">

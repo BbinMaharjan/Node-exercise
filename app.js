@@ -22,20 +22,40 @@ app.set("view engine", "ejs");
 // middleware and static files
 app.use(express.static("public"));
 app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
 
 // mongoose and mongi sanbox routes
-app.get("/add-bootcamp", (req, res) => {
-  const bootcamp = new Bootcamp({
-    firstName: req.query.firstname,
-    lastName: req.query.lastname,
-    email: req.query.email,
-    mobile: req.query.mobile,
-    message: req.query.message,
-  });
+app.post("/add-message", (req, res) => {
+  // console.log(req.body);
+  const bootcamp = new Bootcamp(req.body);
   bootcamp
     .save()
     .then((result) => {
-      res.redirect("/bootcamp");
+      res.redirect("/message");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+// geting Single User details
+app.get("/messages/:id", (req, res) => {
+  const id = req.params.id;
+  Bootcamp.findById(id)
+    .then((result) => {
+      res.render("details", { item: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+// deleting user
+app.get("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  Bootcamp.findByIdAndDelete(id)
+    .then((result) => {
+      res.redirect("/message");
     })
     .catch((err) => {
       console.log(err);

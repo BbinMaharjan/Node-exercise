@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Detail</title>
+</head>
+<body>
+    <%- include("./partials/navbar")%>
+    <h1><%= item.firstName%>  <%= item.lastName%></h1>
+    <h1><%= item.email%></h1>
+    <h1><%= item.mobile%></h1>
+    <h1><%= item.message%></h1>
+    <a href="/delete/<%= item._id%>"> 
+        <button  id ="update" class="w3-button  w3-round w3-right w3-red">Delete</button>
+    </a> 
+
+    </body>
+</html>
