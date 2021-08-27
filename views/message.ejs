@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>All|Message</title>
+</head>
+<body>
+    <%- include("./partials/navbar")%>
+    <h1>All Messages</h1>
+    <% items.forEach(item =>{%>
+        <div class="w3-container">
+            <div class="w3-card-4" style="width:50%; margin: 5px;">
+              <header class="w3-container w3-blue">
+            <h4><%= item.firstName%> <%= item.lastName%></h4>
+              </header>
+              <div class="w3-container">
+                <p>Your Message</p><hr>
+              <p><%= item.message%></p>  
+              </div>
+          
+              <footer class="w3-container w3-blue">
+                <h3><%= item.email%></h3>
+              </footer>
+            </div>
+          </div>
+        <% })%>
+</body>
+</html>
