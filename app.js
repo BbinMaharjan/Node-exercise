@@ -39,7 +39,7 @@ app.post("/add-message", (req, res) => {
 });
 
 // geting Single User details
-app.get("/messages/:id", (req, res) => {
+app.get("/messages/details/:id", (req, res) => {
   const id = req.params.id;
   Bootcamp.findById(id)
     .then((result) => {
@@ -55,6 +55,19 @@ app.get("/delete/:id", (req, res) => {
   const id = req.params.id;
   Bootcamp.findByIdAndDelete(id)
     .then((result) => {
+      res.redirect("/message");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+// update user
+app.post("/update/:id", (req, res) => {
+  const id = req.params.id;
+  Bootcamp.findByIdAndUpdate(id, req.body)
+    .then((result) => {
+      console.log(result);
       res.redirect("/message");
     })
     .catch((err) => {
@@ -79,4 +92,9 @@ app.get("/message", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+// 404 page
+app.use((req, res) => {
+  res.render("404");
 });

@@ -65,3 +65,12 @@ input[type="submit"]:hover {
     margin-top: 0;
   }
 }
+
+/* css for details page */
+
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}

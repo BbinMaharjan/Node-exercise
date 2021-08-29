@@ -24,10 +24,10 @@
                   <div class="w3-container  w3-sand" style="margin: 5px; padding: 5px;">
                     <label>Email : <label><%= item.email%></label></label>
                     <a href="/delete/<%= item._id%>"> 
-                      <button  id ="update" class="w3-button  w3-round w3-right w3-red">Delete</button>
+                      <button  id ="delete" class="w3-button  w3-round w3-right w3-red">Delete</button>
                     </a> 
-                    <a href="/messages/<%= item._id%>">
-                      <button  id ="update" class="w3-button  w3-round w3-right w3-green" style="margin-right: 15px;">View</button>
+                    <a href="/messages/details/<%= item._id%>">
+                      <button  id ="View" class="w3-button  w3-round w3-right w3-green" style="margin-right: 15px;">View</button>
                     </a> 
                   </div>
                 </div>

@@ -4,17 +4,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/style.css" >
     <title>Detail</title>
 </head>
 <body>
     <%- include("./partials/navbar")%>
-    <h1><%= item.firstName%>  <%= item.lastName%></h1>
-    <h1><%= item.email%></h1>
-    <h1><%= item.mobile%></h1>
-    <h1><%= item.message%></h1>
-    <a href="/delete/<%= item._id%>"> 
-        <button  id ="update" class="w3-button  w3-round w3-right w3-red">Delete</button>
-    </a> 
-
+    <div class="w3-container">
+        <div class="w3-container w3-center">
+            <img src="https://image.flaticon.com/icons/png/512/3135/3135768.png" alt="Image" style="width:200px;height:200px; margin-top: 10px;">            
+        </div>
+        <form method="POST" action="/update/<%= item._id%>">
+            <div class="w3-container w3-blue display">
+                <label>First Name</label> <input type="text" name="firstName" id="firstName" value="<%= item.firstName%>">
+                <label>Last Name</label> <input type="text" name="lastName" id="lastName" value="<%= item.lastName%>">
+                <label>Email</label> <input type="text" name="email" id="email" value="<%= item.email%>">                
+                <label>Mobile</label> <input type="text" name="mobile" id="mobile" value="<%= item.mobile%>">                
+            </div>
+                <div style="display: flex; flex-direction: row;margin-top: 10px;padding-left: 100px;">
+                    <h3>Message : </h3>
+                    <textarea name="message" style="height:150px; width: 75%;margin-left: 50px;"><%= item.message%></textarea>
+                </div>
+                <hr> 
+            <button type="submit" id ="update" class="w3-button w3-round w3-left w3-green">Update</button>
+        </form>
+        <a href="/delete/<%= item._id%>"> 
+            <button  id ="delete" class="w3-button w3-right w3-round w3-red">Delete</button>
+        </a> 
+    </div>
     </body>
 </html>
