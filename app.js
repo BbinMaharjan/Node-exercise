@@ -83,6 +83,7 @@ app.get("/bootcamp", (req, res) => {
   res.render("bootcamp");
 });
 
+// get all users
 app.get("/message", (req, res) => {
   Bootcamp.find()
     .sort({ createdAt: -1 })

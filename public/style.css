@@ -66,6 +66,22 @@ input[type="submit"]:hover {
   }
 }
 
+/* home page */
+body,
+h1 {
+  font-family: "Raleway", sans-serif;
+}
+body,
+html {
+  height: 100%;
+}
+.bgimg {
+  background-image: url("https://www.hiresafe.com/wp-content/uploads/2015/02/free-office-wallpaper-26001-26685-hd-wallpapers.jpg");
+  min-height: 93%;
+  background-position: center;
+  background-size: cover;
+}
+
 /* css for details page */
 
 .display {
